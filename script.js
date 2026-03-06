@@ -510,53 +510,115 @@ function showToast(message, type = "default") {
 // REVIEW SLIDER
 // ============================================
 let reviewIndex = 0;
-const REVIEW_COUNT = 5;
+let reviewAutoplay = null;
 
 function initReviews() {
-  const dots = document.getElementById("rev-dots");
-  if (!dots) return;
+  const track = document.getElementById("reviews-track");
+  const dots  = document.getElementById("rev-dots");
+  if (!track || !dots) return;
 
-  for (let i = 0; i < REVIEW_COUNT; i++) {
+  const cards = Array.from(track.children);
+  const total = cards.length;
+
+  // Build dots
+  dots.innerHTML = "";
+  cards.forEach((_, i) => {
     const dot = document.createElement("div");
-    dot.className = `rev-dot${i === 0 ? " active" : ""}`;
-    dot.onclick = () => goToReview(i);
+    dot.className = "rev-dot" + (i === 0 ? " active" : "");
+    dot.addEventListener("click", () => goToReview(i));
     dots.appendChild(dot);
+  });
+
+  // Show first card
+  updateReviewSlider(cards);
+
+  // Auto-play
+  reviewAutoplay = setInterval(() => {
+    reviewIndex = (reviewIndex + 1) % total;
+    updateReviewSlider(cards);
+  }, 5000);
+
+  // Pause on hover
+  track.addEventListener("mouseenter", () => clearInterval(reviewAutoplay));
+  track.addEventListener("mouseleave", () => {
+    reviewAutoplay = setInterval(() => {
+      reviewIndex = (reviewIndex + 1) % total;
+      updateReviewSlider(cards);
+    }, 5000);
+  });
+
+  // Touch/swipe support
+  let touchStartX = 0;
+  track.addEventListener("touchstart", e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener("touchend", e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      reviewIndex = (reviewIndex + (diff > 0 ? 1 : -1) + total) % total;
+      updateReviewSlider(cards);
+    }
+  });
+}
+
+function updateReviewSlider(cards) {
+  if (!cards) {
+    const track = document.getElementById("reviews-track");
+    if (!track) return;
+    cards = Array.from(track.children);
   }
 
-  // Auto-slide every 5s
-  setInterval(() => slideReviews(1), 5000);
+  const total = cards.length;
+
+  // Use scroll-based approach — most reliable across all browsers
+  const wrap = document.querySelector(".reviews-track-wrap");
+  if (!wrap) return;
+
+  // Calculate offset: center the active card or align left
+  const card = cards[reviewIndex];
+  const wrapW = wrap.offsetWidth;
+  const cardW = card.offsetWidth + 20; // gap
+  const offset = Math.max(0, reviewIndex * cardW - (wrapW - cardW) / 2);
+
+  document.getElementById("reviews-track").style.transform = `translateX(-${offset}px)`;
+
+  // Update dots
+  document.querySelectorAll(".rev-dot").forEach((d, i) => {
+    d.classList.toggle("active", i === reviewIndex);
+  });
+
+  // Highlight active card
+  cards.forEach((c, i) => {
+    c.style.opacity = i === reviewIndex ? "1" : "0.45";
+    c.style.transform = i === reviewIndex ? "scale(1.03)" : "scale(1)";
+  });
 }
 
 function slideReviews(dir) {
-  reviewIndex = (reviewIndex + dir + REVIEW_COUNT) % REVIEW_COUNT;
-  goToReview(reviewIndex);
+  const track = document.getElementById("reviews-track");
+  if (!track) return;
+  const total = track.children.length;
+  reviewIndex = (reviewIndex + dir + total) % total;
+  updateReviewSlider(Array.from(track.children));
 }
 
 function goToReview(index) {
   reviewIndex = index;
   const track = document.getElementById("reviews-track");
   if (!track) return;
-
-  const cardWidth = track.children[0]?.offsetWidth + 20 || 320;
-  track.style.transform = `translateX(-${index * cardWidth}px)`;
-
-  document.querySelectorAll(".rev-dot").forEach((d, i) => {
-    d.classList.toggle("active", i === index);
-  });
+  updateReviewSlider(Array.from(track.children));
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   initReviews();
+
   // Promo banner adjusts hero top padding
   const banner = document.getElementById("promo-banner");
   if (banner) {
     const heroContent = document.querySelector(".hero-content");
     if (heroContent) {
       const adjust = () => {
-        const bannerH = banner.offsetHeight;
         heroContent.style.paddingTop = banner.style.display === "none"
           ? "90px"
-          : `${90 + bannerH}px`;
+          : `${90 + banner.offsetHeight}px`;
       };
       adjust();
       new ResizeObserver(adjust).observe(banner);
