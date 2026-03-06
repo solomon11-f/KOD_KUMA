@@ -587,7 +587,7 @@ function updateReviewSlider(cards) {
 
   // Highlight active card
   cards.forEach((c, i) => {
-    c.style.opacity = i === reviewIndex ? "1" : "0.45";
+    c.style.opacity = "1";
     c.style.transform = i === reviewIndex ? "scale(1.03)" : "scale(1)";
   });
 }
