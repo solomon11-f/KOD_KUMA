@@ -1609,7 +1609,7 @@ body.has-promo #hero { padding-top: calc(70px + 40px); }
   max-width: 300px;
   flex-shrink: 0;
   transition: var(--transition), opacity 0.4s ease, transform 0.4s ease;
-  opacity: 0.45;
+  opacity: 1;
 }
 
 .review-card:hover {
