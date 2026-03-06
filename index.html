@@ -20,6 +20,8 @@
     <li><a href="#hero">Početna</a></li>
     <li><a href="#o-nama">O nama</a></li>
     <li><a href="#meni">Meni</a></li>
+    <li><a href="#galerija">Galerija</a></li>
+    <li><a href="#recenzije">Recenzije</a></li>
     <li><a href="#lokacija">Lokacija</a></li>
   </ul>
 
@@ -39,7 +41,21 @@
   <a href="#hero">Početna</a>
   <a href="#o-nama">O nama</a>
   <a href="#meni">Meni</a>
+  <a href="#galerija">Galerija</a>
+  <a href="#recenzije">Recenzije</a>
   <a href="#lokacija">Lokacija</a>
+</div>
+
+<!-- ============================================
+     PROMO BANNER
+     ============================================ -->
+<div id="promo-banner">
+  <div class="promo-inner">
+    <span class="promo-icon">🔥</span>
+    <span class="promo-text">Akcija dana: <strong>Pljeskavica 200g + piće = 380 RSD</strong> — samo danas!</span>
+    <span class="promo-icon">🔥</span>
+  </div>
+  <button class="promo-close" onclick="document.getElementById('promo-banner').style.display='none'" aria-label="Zatvori">✕</button>
 </div>
 
 <!-- ============================================
@@ -181,6 +197,130 @@
 
     <div class="menu-grid" id="menu-grid">
       <!-- populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- Drip divider -->
+<div class="drip-divider dark-to-cream">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#FDF8F0" d="M0,0 L0,20 Q20,40 40,20 Q60,0 80,20 Q100,40 120,20 Q140,0 160,20 Q180,40 200,20 Q220,0 240,20 Q260,40 280,22 Q300,5 320,22 Q340,40 360,20 Q380,0 400,20 Q420,40 440,20 Q460,0 480,20 Q500,40 520,20 Q540,0 560,20 Q580,40 600,20 Q620,0 640,20 Q660,40 680,20 Q700,0 720,20 Q740,40 760,20 Q780,0 800,20 Q820,40 840,20 Q860,0 880,20 Q900,40 920,20 Q940,0 960,20 Q980,40 1000,20 Q1020,0 1040,20 Q1060,40 1080,20 Q1100,0 1120,20 Q1140,40 1160,20 Q1180,0 1200,20 Q1220,40 1240,20 Q1260,0 1280,20 Q1300,40 1320,20 Q1340,0 1360,20 Q1380,40 1400,20 Q1420,0 1440,20 L1440,60 L0,60 Z"/>
+  </svg>
+</div>
+
+<!-- ============================================
+     GALERIJA
+     ============================================ -->
+<section id="galerija">
+  <div class="section-header fade-in">
+    <span class="eyebrow">Pogledaj</span>
+    <h2>Iz Naše Kuhinje</h2>
+    <p>Svaka slika govori hiljadu reči – a mirisi su još bolji!</p>
+  </div>
+  <div class="gallery-grid fade-in">
+    <div class="gallery-item tall">
+      <div class="gallery-placeholder">🥩</div>
+      <div class="gallery-overlay"><span>Pljeskavice</span></div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-placeholder">🍔</div>
+      <div class="gallery-overlay"><span>Burgeri</span></div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-placeholder">🍢</div>
+      <div class="gallery-overlay"><span>Ćevapi</span></div>
+    </div>
+    <div class="gallery-item wide">
+      <div class="gallery-placeholder">🔥</div>
+      <div class="gallery-overlay"><span>Roštilj</span></div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-placeholder">🍗</div>
+      <div class="gallery-overlay"><span>Belo meso</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Drip divider -->
+<div class="drip-divider cream-to-dark" style="transform:rotate(180deg)">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#2D1000" d="M0,0 L0,20 Q20,40 40,20 Q60,0 80,20 Q100,40 120,20 Q140,0 160,20 Q180,40 200,20 Q220,0 240,20 Q260,40 280,22 Q300,5 320,22 Q340,40 360,20 Q380,0 400,20 Q420,40 440,20 Q460,0 480,20 Q500,40 520,20 Q540,0 560,20 Q580,40 600,20 Q620,0 640,20 Q660,40 680,20 Q700,0 720,20 Q740,40 760,20 Q780,0 800,20 Q820,40 840,20 Q860,0 880,20 Q900,40 920,20 Q940,0 960,20 Q980,40 1000,20 Q1020,0 1040,20 Q1060,40 1080,20 Q1100,0 1120,20 Q1140,40 1160,20 Q1180,0 1200,20 Q1220,40 1240,20 Q1260,0 1280,20 Q1300,40 1320,20 Q1340,0 1360,20 Q1380,40 1400,20 Q1420,0 1440,20 L1440,60 L0,60 Z"/>
+  </svg>
+</div>
+
+<!-- ============================================
+     RECENZIJE
+     ============================================ -->
+<section id="recenzije">
+  <div class="reviews-container">
+    <div class="section-header light fade-in">
+      <span class="eyebrow">Šta kažu gosti</span>
+      <h2>Reči Naših Mušterija</h2>
+      <p>Pravi ukus govori sam za sebe.</p>
+    </div>
+    <div class="reviews-track-wrap">
+      <div class="reviews-track" id="reviews-track">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Najbolja pljeskavica u Obrenovcu, bez dileme. Dolazim svaki vikend već 5 godina!"</p>
+          <div class="review-author">
+            <div class="author-avatar">M</div>
+            <div>
+              <div class="author-name">Marko P.</div>
+              <div class="author-label">Stalni gost</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Punjena pljeskavica je nešto posebno. Uvek sveže, uvek toplo. Kum zna posao!"</p>
+          <div class="review-author">
+            <div class="author-avatar">J</div>
+            <div>
+              <div class="author-name">Jelena M.</div>
+              <div class="author-label">Verifikovan gost</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card featured">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Mešani roštilj za 1kg je fenomenalan! Cela familija zadovoljna, cene su fer. Preporučujem svima!"</p>
+          <div class="review-author">
+            <div class="author-avatar">N</div>
+            <div>
+              <div class="author-name">Nikola S.</div>
+              <div class="author-label">Porodični gost</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Džek burger – jednom probaš, više ne možeš bez njega. Sos je remek-delo!"</p>
+          <div class="review-author">
+            <div class="author-avatar">A</div>
+            <div>
+              <div class="author-name">Ana K.</div>
+              <div class="author-label">Verifikovan gost</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Leskovačka je prava stvar! Ljuta kako treba, sočna, mirisna. Bravo Kume!"</p>
+          <div class="review-author">
+            <div class="author-avatar">S</div>
+            <div>
+              <div class="author-name">Stefan R.</div>
+              <div class="author-label">Stalni gost</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-nav">
+      <button class="rev-btn" id="rev-prev" onclick="slideReviews(-1)" aria-label="Prethodna">‹</button>
+      <div class="rev-dots" id="rev-dots"></div>
+      <button class="rev-btn" id="rev-next" onclick="slideReviews(1)" aria-label="Sledeća">›</button>
     </div>
   </div>
 </section>
@@ -396,44 +536,16 @@
      ============================================ -->
 <div id="toast-container"></div>
 
+<!-- ============================================
+     WHATSAPP FLOATING BUTTON
+     ============================================ -->
+<a id="whatsapp-btn" href="https://wa.me/38162897096?text=Zdravo%2C%20želim%20da%20poručim%20kod%20Kod%20Kuma!" target="_blank" rel="noopener" aria-label="Kontaktiraj nas na WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span class="wa-label">Naruči na WhatsApp</span>
+</a>
+
 <script src="script.js"></script>
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
 </body>
 </html>
