@@ -1419,3 +1419,360 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ============================================
+   PROMO BANNER
+   ============================================ */
+#promo-banner {
+  position: fixed;
+  top: 70px;
+  left: 0; right: 0;
+  z-index: 890;
+  background: linear-gradient(90deg, var(--red) 0%, #e74c3c 50%, var(--red) 100%);
+  background-size: 200% 100%;
+  animation: promoBg 4s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 50px 10px 16px;
+  text-align: center;
+}
+
+@keyframes promoBg {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+.promo-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.promo-icon { font-size: 1rem; }
+
+.promo-text {
+  color: var(--white);
+  font-size: 0.88rem;
+  letter-spacing: 0.03em;
+}
+
+.promo-text strong { font-weight: 800; }
+
+.promo-close {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255,255,255,0.7);
+  font-size: 1rem;
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.promo-close:hover {
+  background: rgba(255,255,255,0.15);
+  color: var(--white);
+}
+
+/* bump hero down when banner is visible */
+body.has-promo #hero { padding-top: calc(70px + 40px); }
+
+/* ============================================
+   GALLERY
+   ============================================ */
+#galerija {
+  background: var(--cream-light);
+  padding: 80px 40px;
+}
+
+.gallery-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 200px 200px;
+  gap: 16px;
+}
+
+.gallery-item {
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  background: var(--brown);
+}
+
+.gallery-item.tall  { grid-row: span 2; }
+.gallery-item.wide  { grid-column: span 2; }
+
+.gallery-placeholder {
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, var(--brown) 0%, var(--dark2) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .gallery-placeholder,
+.gallery-item:hover img {
+  transform: scale(1.07);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26,8,0,0.75) 0%, transparent 50%);
+  display: flex;
+  align-items: flex-end;
+  padding: 18px;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+
+.gallery-overlay span {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .gallery-item.tall  { grid-row: span 1; }
+  .gallery-item.wide  { grid-column: span 2; }
+  .gallery-placeholder { min-height: 150px; }
+}
+
+@media (max-width: 480px) {
+  #galerija { padding: 60px 16px; }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .gallery-item.wide { grid-column: span 1; }
+  .gallery-placeholder { min-height: 140px; }
+}
+
+/* ============================================
+   REVIEWS
+   ============================================ */
+#recenzije {
+  background: var(--dark2);
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.reviews-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.reviews-track-wrap {
+  overflow: hidden;
+  margin: 0 -40px;
+  padding: 16px 40px 24px;
+}
+
+.reviews-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.review-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(245,197,24,0.15);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  min-width: 300px;
+  max-width: 300px;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.review-card:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(245,197,24,0.35);
+  transform: translateY(-4px);
+}
+
+.review-card.featured {
+  background: rgba(245,197,24,0.08);
+  border-color: rgba(245,197,24,0.4);
+  position: relative;
+}
+
+.review-card.featured::before {
+  content: '⭐ Istaknuto';
+  position: absolute;
+  top: -12px; left: 20px;
+  background: var(--gold);
+  color: var(--dark);
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 50px;
+  letter-spacing: 0.08em;
+}
+
+.review-stars {
+  color: var(--gold);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.review-text {
+  color: var(--cream);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  opacity: 0.85;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.author-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brown-mid), var(--brown));
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.author-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9rem;
+  color: var(--white);
+  letter-spacing: 0.04em;
+}
+
+.author-label {
+  font-size: 0.75rem;
+  color: var(--cream);
+  opacity: 0.5;
+  margin-top: 2px;
+}
+
+.reviews-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.rev-btn {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: rgba(245,197,24,0.12);
+  border: 2px solid rgba(245,197,24,0.25);
+  color: var(--gold);
+  font-size: 1.4rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--transition);
+}
+
+.rev-btn:hover {
+  background: var(--gold);
+  color: var(--dark);
+  border-color: var(--gold);
+}
+
+.rev-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.rev-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(245,197,24,0.25);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.rev-dot.active {
+  background: var(--gold);
+  width: 20px;
+  border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+  #recenzije { padding: 60px 0; }
+  .reviews-container { padding: 0 16px; }
+  .reviews-track-wrap { margin: 0 -16px; padding: 16px 16px 24px; }
+  .review-card { min-width: 270px; max-width: 270px; }
+}
+
+/* ============================================
+   WHATSAPP BUTTON
+   ============================================ */
+#whatsapp-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 800;
+  background: #25D366;
+  color: var(--white);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+#whatsapp-btn:hover {
+  background: #1ebe5d;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(37,211,102,0.55);
+}
+
+.wa-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media (max-width: 500px) {
+  #whatsapp-btn { bottom: 20px; right: 16px; padding: 14px; border-radius: 50%; }
+  .wa-label { display: none; }
+}
