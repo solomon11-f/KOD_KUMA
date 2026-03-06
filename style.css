@@ -1608,7 +1608,8 @@ body.has-promo #hero { padding-top: calc(70px + 40px); }
   min-width: 300px;
   max-width: 300px;
   flex-shrink: 0;
-  transition: var(--transition);
+  transition: var(--transition), opacity 0.4s ease, transform 0.4s ease;
+  opacity: 0.45;
 }
 
 .review-card:hover {
