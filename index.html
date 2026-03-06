@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kod Kuma – Domaći Roštilj & Brza Hrana</title>
+  <meta name="description" content="Kod Kuma – domaće pljeskavice, roštilj i burgeri. Naručite online ili posetite nas!" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>" />
+</head>
+<body>
+
+<!-- ============================================
+     NAVBAR
+     ============================================ -->
+<nav id="navbar">
+  <div class="nav-logo">KOD <span>KUMA</span></div>
+
+  <ul class="nav-links">
+    <li><a href="#hero">Početna</a></li>
+    <li><a href="#o-nama">O nama</a></li>
+    <li><a href="#meni">Meni</a></li>
+    <li><a href="#lokacija">Lokacija</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <button id="cart-btn" aria-label="Korpa">
+      🛒 Korpa
+      <span id="cart-count">0</span>
+    </button>
+    <button class="hamburger" id="hamburger-btn" aria-label="Meni">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<div class="mobile-nav" id="mobile-nav">
+  <a href="#hero">Početna</a>
+  <a href="#o-nama">O nama</a>
+  <a href="#meni">Meni</a>
+  <a href="#lokacija">Lokacija</a>
+</div>
+
+<!-- ============================================
+     HERO
+     ============================================ -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-grill-lines"></div>
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="badge">🔥 Domaći roštilj od 2010.</div>
+      <h1>
+        Kod Kuma
+        <span class="highlight">Jedeš Kao Kod Kuće</span>
+      </h1>
+      <p class="subtitle">
+        Pljeskavice, roštilj i burgeri napravljeni sa ljubavlju i svežim sastojcima. 
+        Pravi kućni ukus na svakom zalogaju.
+      </p>
+      <div class="hero-cta">
+        <a href="#meni" class="btn-primary">🍔 Pogledaj Meni</a>
+        <a href="#lokacija" class="btn-secondary">📍 Nađi Nas</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="number">15+</div>
+          <div class="label">God. iskustva</div>
+        </div>
+        <div class="hero-stat">
+          <div class="number">50+</div>
+          <div class="label">Jela u meniju</div>
+        </div>
+        <div class="hero-stat">
+          <div class="number">08–23</div>
+          <div class="label">Radno vreme</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-img-wrap">
+        <div class="hero-img-placeholder">
+          <span class="emoji">🍔</span>
+          <p>KOD KUMA</p>
+        </div>
+      </div>
+      <div class="hero-info-cards">
+        <div class="hero-card">
+          <span class="icon">🕗</span>
+          <div class="info">
+            <div class="title">Radno vreme</div>
+            <div class="value">08:00 – 23:00</div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <span class="icon">📞</span>
+          <div class="info">
+            <div class="title">Telefon</div>
+            <div class="value">062 897-60-96</div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <span class="icon">📍</span>
+          <div class="info">
+            <div class="title">Lokacija</div>
+            <div class="value">Obrenovac</div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <span class="icon">🚗</span>
+          <div class="info">
+            <div class="title">Dostava</div>
+            <div class="value">Dostupna</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Drip divider -->
+<div class="drip-divider dark-to-cream">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#FDF8F0" d="M0,0 L0,20 Q20,40 40,20 Q60,0 80,20 Q100,40 120,20 Q140,0 160,20 Q180,40 200,20 Q220,0 240,20 Q260,40 280,22 Q300,5 320,22 Q340,40 360,20 Q380,0 400,20 Q420,40 440,20 Q460,0 480,20 Q500,40 520,20 Q540,0 560,20 Q580,40 600,20 Q620,0 640,20 Q660,40 680,20 Q700,0 720,20 Q740,40 760,20 Q780,0 800,20 Q820,40 840,20 Q860,0 880,20 Q900,40 920,20 Q940,0 960,20 Q980,40 1000,20 Q1020,0 1040,20 Q1060,40 1080,20 Q1100,0 1120,20 Q1140,40 1160,20 Q1180,0 1200,20 Q1220,40 1240,20 Q1260,0 1280,20 Q1300,40 1320,20 Q1340,0 1360,20 Q1380,40 1400,20 Q1420,0 1440,20 L1440,60 L0,60 Z"/>
+  </svg>
+</div>
+
+<!-- ============================================
+     O NAMA
+     ============================================ -->
+<section id="o-nama">
+  <div class="section-header fade-in">
+    <span class="eyebrow">Zašto mi?</span>
+    <h2>Pravi Ukus, Pravo Mesto</h2>
+    <p>Kod Kuma je više od fast fooda – to je tradicija ukusa koju pamtiš.</p>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-card fade-in">
+      <div class="icon-wrap">🥩</div>
+      <h3>Svež Materijal</h3>
+      <p>Koristimo isključivo svež materijal, svaki dan. Nema zamrznute robe – sve se sprema na mestu.</p>
+    </div>
+    <div class="about-card fade-in">
+      <div class="icon-wrap">🔥</div>
+      <h3>Pravi Roštilj</h3>
+      <p>Klasični roštilj na ćumuru, onako kako treba. Miris koji te zove iz ulice.</p>
+    </div>
+    <div class="about-card fade-in">
+      <div class="icon-wrap">⚡</div>
+      <h3>Brza Usluga</h3>
+      <p>Poštujemo tvoje vreme. Brza priprema, topla hrana, bez čekanja.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Drip divider -->
+<div class="drip-divider cream-to-dark" style="transform:rotate(180deg)">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#2D1000" d="M0,0 L0,20 Q20,40 40,20 Q60,0 80,20 Q100,40 120,20 Q140,0 160,20 Q180,40 200,20 Q220,0 240,20 Q260,40 280,22 Q300,5 320,22 Q340,40 360,20 Q380,0 400,20 Q420,40 440,20 Q460,0 480,20 Q500,40 520,20 Q540,0 560,20 Q580,40 600,20 Q620,0 640,20 Q660,40 680,20 Q700,0 720,20 Q740,40 760,20 Q780,0 800,20 Q820,40 840,20 Q860,0 880,20 Q900,40 920,20 Q940,0 960,20 Q980,40 1000,20 Q1020,0 1040,20 Q1060,40 1080,20 Q1100,0 1120,20 Q1140,40 1160,20 Q1180,0 1200,20 Q1220,40 1240,20 Q1260,0 1280,20 Q1300,40 1320,20 Q1340,0 1360,20 Q1380,40 1400,20 Q1420,0 1440,20 L1440,60 L0,60 Z"/>
+  </svg>
+</div>
+
+<!-- ============================================
+     MENI
+     ============================================ -->
+<section id="meni">
+  <div class="menu-container">
+    <div class="section-header light fade-in">
+      <span class="eyebrow">Šta nudimo</span>
+      <h2>Naš Meni</h2>
+      <p>Odaberi svoju omiljenu kombinaciju i poruči odmah!</p>
+    </div>
+
+    <div class="menu-tabs" id="menu-tabs">
+      <!-- populated by JS -->
+    </div>
+
+    <div class="menu-grid" id="menu-grid">
+      <!-- populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- Drip divider -->
+<div class="drip-divider dark-to-cream">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#FDF8F0" d="M0,0 L0,20 Q20,40 40,20 Q60,0 80,20 Q100,40 120,20 Q140,0 160,20 Q180,40 200,20 Q220,0 240,20 Q260,40 280,22 Q300,5 320,22 Q340,40 360,20 Q380,0 400,20 Q420,40 440,20 Q460,0 480,20 Q500,40 520,20 Q540,0 560,20 Q580,40 600,20 Q620,0 640,20 Q660,40 680,20 Q700,0 720,20 Q740,40 760,20 Q780,0 800,20 Q820,40 840,20 Q860,0 880,20 Q900,40 920,20 Q940,0 960,20 Q980,40 1000,20 Q1020,0 1040,20 Q1060,40 1080,20 Q1100,0 1120,20 Q1140,40 1160,20 Q1180,0 1200,20 Q1220,40 1240,20 Q1260,0 1280,20 Q1300,40 1320,20 Q1340,0 1360,20 Q1380,40 1400,20 Q1420,0 1440,20 L1440,60 L0,60 Z"/>
+  </svg>
+</div>
+
+<!-- ============================================
+     LOKACIJA
+     ============================================ -->
+<section id="lokacija">
+  <div class="section-header fade-in">
+    <span class="eyebrow">Gde smo?</span>
+    <h2>Pronađi Nas</h2>
+    <p>Dođi lično ili naruči telefonom – uvek smo tu!</p>
+  </div>
+
+  <div class="location-grid">
+    <div class="location-info">
+      <div class="location-card fade-in">
+        <span class="icon">📍</span>
+        <div>
+          <h4>Adresa</h4>
+          <p>Vazduhoplovna bb<br>Obrenovac, Srbija</p>
+        </div>
+      </div>
+
+      <div class="location-card fade-in">
+        <span class="icon">🕗</span>
+        <div>
+          <h4>Radno vreme</h4>
+          <div class="hours-table">
+            <div class="hours-row">
+              <span class="day">Ponedeljak – Petak</span>
+              <span class="time">08:00 – 23:00</span>
+            </div>
+            <div class="hours-row">
+              <span class="day">Subota</span>
+              <span class="time">08:00 – 23:00</span>
+            </div>
+            <div class="hours-row">
+              <span class="day">Nedelja</span>
+              <span class="time">09:00 – 22:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="location-card fade-in">
+        <span class="icon">📞</span>
+        <div>
+          <h4>Kontakt</h4>
+          <p>062 897-60-96</p>
+        </div>
+      </div>
+
+      <div class="location-card fade-in">
+        <span class="icon">🚗</span>
+        <div>
+          <h4>Dostava</h4>
+          <p>Dostava dostupna u Obrenovcu i okolini</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-container fade-in">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22705.78!2d20.1879!3d44.6560!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a6e4e2e2e2e2f%3A0x1!2sObrenovac!5e0!3m2!1ssr!2srs!4v1"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Lokacija Kod Kuma"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">KOD KUMA 🔥</div>
+      <p>Domaći roštilj i brza hrana u Obrenovcu od 2010. godine. Svežina i ukus koji se pamti.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navigacija</h4>
+      <ul>
+        <li><a href="#hero">Početna</a></li>
+        <li><a href="#o-nama">O nama</a></li>
+        <li><a href="#meni">Meni</a></li>
+        <li><a href="#lokacija">Lokacija</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:0628976096">062 897-60-96</a></li>
+        <li><a href="#">Obrenovac, Srbija</a></li>
+        <li><a href="#">08:00 – 23:00</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2025 Kod Kuma. Sva prava zadržana.</span>
+    <span>Made with ❤️ in Obrenovac</span>
+  </div>
+</footer>
+
+<!-- ============================================
+     CART SIDEBAR
+     ============================================ -->
+<div id="cart-overlay"></div>
+
+<div id="cart-sidebar">
+  <div class="cart-header">
+    <h3>🛒 Tvoja Korpa</h3>
+    <button class="cart-close" id="cart-close" aria-label="Zatvori korpu">✕</button>
+  </div>
+
+  <div class="cart-items" id="cart-items"></div>
+
+  <div id="cart-empty" class="cart-empty">
+    <div class="icon">🛒</div>
+    <p>Korpa je prazna.<br>Dodaj nešto ukusno!</p>
+  </div>
+
+  <div class="cart-footer">
+    <div class="cart-total-row">
+      <span class="label">Ukupno</span>
+      <span class="total" id="cart-total">0 <span>RSD</span></span>
+    </div>
+    <button class="checkout-btn" id="checkout-btn">
+      💳 Nastavi sa narudžbinom
+    </button>
+  </div>
+</div>
+
+<!-- ============================================
+     CHECKOUT MODAL
+     ============================================ -->
+<div id="checkout-overlay">
+  <div class="checkout-modal">
+    <div class="checkout-top">
+      <h3>📋 Narudžbina</h3>
+      <button class="modal-close" id="checkout-close" aria-label="Zatvori">✕</button>
+    </div>
+
+    <div class="checkout-body">
+
+      <!-- Success screen -->
+      <div id="order-success">
+        <div class="checkmark">✓</div>
+        <h3>Narudžbina Primljena!</h3>
+        <p>Hvala na narudžbini! Kontaktiraćemo vas uskoro na navedeni broj telefona.</p>
+      </div>
+
+      <!-- Form -->
+      <div id="order-form-wrap">
+        <div class="order-type-switch">
+          <button class="order-type-btn active" data-type="pickup">🏃 Lično preuzimanje</button>
+          <button class="order-type-btn" data-type="dostava">🚗 Dostava</button>
+        </div>
+
+        <form id="order-form" novalidate>
+          <div class="form-group">
+            <label for="ime">Ime i Prezime *</label>
+            <input type="text" id="ime" placeholder="Npr. Marko Marković" required />
+          </div>
+
+          <div class="form-group">
+            <label for="telefon">Broj telefona *</label>
+            <input type="tel" id="telefon" placeholder="Npr. 062 123 4567" required />
+          </div>
+
+          <div class="form-group address-group">
+            <label for="adresa">Adresa dostave *</label>
+            <input type="text" id="adresa" placeholder="Ulica i broj" />
+          </div>
+
+          <div class="form-group">
+            <label for="napomena">Napomena (opciono)</label>
+            <textarea id="napomena" placeholder="Posebne želje, alergije..."></textarea>
+          </div>
+
+          <div class="order-summary">
+            <div class="order-summary-title">Pregled narudžbine</div>
+            <div class="summary-items" id="summary-items"></div>
+            <div class="summary-total">
+              <span>Ukupno</span>
+              <span id="summary-total">0 RSD</span>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-order-btn" id="submit-order-btn">
+            ✅ Potvrdi Narudžbinu
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     TOAST CONTAINER
+     ============================================ -->
+<div id="toast-container"></div>
+
+<script src="script.js"></script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
