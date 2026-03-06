@@ -507,6 +507,64 @@ function showToast(message, type = "default") {
 }
 
 // ============================================
+// REVIEW SLIDER
+// ============================================
+let reviewIndex = 0;
+const REVIEW_COUNT = 5;
+
+function initReviews() {
+  const dots = document.getElementById("rev-dots");
+  if (!dots) return;
+
+  for (let i = 0; i < REVIEW_COUNT; i++) {
+    const dot = document.createElement("div");
+    dot.className = `rev-dot${i === 0 ? " active" : ""}`;
+    dot.onclick = () => goToReview(i);
+    dots.appendChild(dot);
+  }
+
+  // Auto-slide every 5s
+  setInterval(() => slideReviews(1), 5000);
+}
+
+function slideReviews(dir) {
+  reviewIndex = (reviewIndex + dir + REVIEW_COUNT) % REVIEW_COUNT;
+  goToReview(reviewIndex);
+}
+
+function goToReview(index) {
+  reviewIndex = index;
+  const track = document.getElementById("reviews-track");
+  if (!track) return;
+
+  const cardWidth = track.children[0]?.offsetWidth + 20 || 320;
+  track.style.transform = `translateX(-${index * cardWidth}px)`;
+
+  document.querySelectorAll(".rev-dot").forEach((d, i) => {
+    d.classList.toggle("active", i === index);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initReviews();
+  // Promo banner adjusts hero top padding
+  const banner = document.getElementById("promo-banner");
+  if (banner) {
+    const heroContent = document.querySelector(".hero-content");
+    if (heroContent) {
+      const adjust = () => {
+        const bannerH = banner.offsetHeight;
+        heroContent.style.paddingTop = banner.style.display === "none"
+          ? "90px"
+          : `${90 + bannerH}px`;
+      };
+      adjust();
+      new ResizeObserver(adjust).observe(banner);
+    }
+  }
+});
+
+// ============================================
 // SMOOTH SCROLL FOR NAV LINKS
 // ============================================
 document.querySelectorAll('a[href^="#"]').forEach(a => {
